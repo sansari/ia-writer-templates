@@ -300,6 +300,11 @@ h1, h4, h5 {
   text-align: center;
 }
 
+h1 {
+  font-weight: 700;
+  margin-bottom: 2.2em;
+}
+
 h1,
 h2 {
     padding-top: 1em;
@@ -395,18 +400,27 @@ blockquote strong em {
   font-weight: 700;
 }
 
-/* Page Breaks */
+/* Page Breaks and horizontal rules */
 
 .pagebreak {
     content: "---Page Break---"
 }
 
+hr {
+  border: 0;
+  text-align: center;
+}
+
+hr::after {
+  content: "* * *";
+  display: block;
+}
 
 /* Override core.css */
 @media screen and (min-width: 100px) {
   hr {
     margin-top: calc((30 / 18) * 1rem);
-    margin-bottom: calc((29 / 18) * 1rem); /* -1px for border-bottom */
+    margin-bottom: calc((29 / 18) * 1rem);
   }
 }
 
