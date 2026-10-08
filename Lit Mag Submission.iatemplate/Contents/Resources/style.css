@@ -349,6 +349,11 @@ p, figcaption {
   margin-top: 0;
 }
 
+.hard-break-indent {
+  display: inline-block;
+  width: 3em;
+}
+
 /* ...but not the very first one */
 
 body > :first-child{
@@ -488,6 +493,10 @@ kbd {
   p {
     text-indent: 0.5in;
     margin-top: 0;
+  }
+
+  .hard-break-indent {
+    width: 0.5in;
   }
 
   /* ...but not the very first one */

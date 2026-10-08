@@ -65,9 +65,24 @@ window.addEventListener('load', function() {
       footnoteMarkerlist[i].innerHTML = i + 1
     }
   }
+
+  var indentHardBreaks = function() {
+    var hardBreaks = document.body.querySelectorAll('p br')
+    for (var i = 0, l = hardBreaks.length; i < l; i++) {
+      var hardBreak = hardBreaks[i]
+      var nextElement = hardBreak.nextElementSibling
+      if (nextElement && nextElement.classList.contains('hard-break-indent')) { continue }
+
+      var indent = document.createElement('span')
+      indent.setAttribute('class', 'hard-break-indent')
+      indent.setAttribute('aria-hidden', 'true')
+      hardBreak.parentNode.insertBefore(indent, hardBreak.nextSibling)
+    }
+  }
   
   document.body.addEventListener('ia-writer-change', function() {
     splitFootnotesAndCitations()
     relabelFootnotes()
+    indentHardBreaks()
   })
 })

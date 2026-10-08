@@ -9,3 +9,7 @@
 ### Changed
 
 - Documented how to use Shift–Enter for Markdown hard breaks and `----` for visible three-star scene dividers.
+
+### Fixed
+
+- Fixed Lit Mag Submission paragraphs created with Markdown hard breaks (`\`) so they receive the expected first-line indent in preview and print/PDF output.
